@@ -1,11 +1,10 @@
 module.exports = {
   dest: 'vuepress',
-  base: '/Vue_Blog/',
   locales: {
     '/': {
       lang: 'zh-CN',
       title: 'GongJS',
-      description: 'Talk is cheap. Show me the code. --Linus'
+      description: 'Talk is cheap. Show me the code.'
     }
   },
   head: [
@@ -22,27 +21,23 @@ module.exports = {
   serviceWorker: true,
   theme: 'vue',
   themeConfig: {
-    repo: 'docschina/vuepress',
-    editLinks: true,
+    repo: 'gongjs/Vue_Blog',
+    editLinks: false,
     docsDir: 'docs',
     locales: {
       '/': {
-        label: '简体中文',
-        selectText: '选择语言',
-        editLinkText: '编辑此页',
-        lastUpdated: '上次更新',
         nav: [
           {
-            text: '指南',
+            text: 'Blog',
             link: '/guide/',
           },
           {
-            text: '配置参考',
-            link: '/config/'
+            text: 'Project',
+            link: '/project/'
           },
           {
-            text: '默认主题配置',
-            link: '/default-theme-config/'
+            text: 'Resume',
+            link: '/resume/'
           }
         ],
         sidebar: {
@@ -59,15 +54,7 @@ function genSidebarConfig (title) {
       title,
       collapsable: false,
       children: [
-        '',
-        'getting-started',
-        'basic-config',
-        'assets',
-        'markdown',
-        'using-vue',
-        'custom-themes',
-        'i18n',
-        'deploy'
+        ''
       ]
     }
   ]

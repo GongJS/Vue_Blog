@@ -1,8 +1,8 @@
 ---
-home: true
-heroImage: /hero.png
-actionText: My Blog→
-actionLink: /guide/
+home: true                 
+heroImage: /hero.png      
+actionText: My Blog→       
+actionLink: /guide/        
 ---
 
 <div style="text-align: center">
