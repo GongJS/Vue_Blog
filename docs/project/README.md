@@ -1,5 +1,6 @@
 ---
 sidebar: auto
+comments: true
 ---
 
 # 项目介绍vue-antd 后台管理系

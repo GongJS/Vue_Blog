@@ -1,5 +1,6 @@
 ---
 sidebar: auto
+comments: true
 ---
 
 # 龚坚圣

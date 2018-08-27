@@ -54,13 +54,16 @@
     </div>
 
     <slot name="bottom"/>
+    <comments></comments>
   </div>
 </template>
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
-
+import Comments from './Comments.vue'
 export default {
+  inject: ['reload'],
+  components: {Comments},
   props: ['sidebarItems'],
 
   computed: {
