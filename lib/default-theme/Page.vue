@@ -54,7 +54,7 @@
     </div>
 
     <slot name="bottom"/>
-    <comments></comments>
+    <comments v-if="hackReset"></comments>
   </div>
 </template>
 
@@ -62,10 +62,13 @@
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 import Comments from './Comments.vue'
 export default {
-  inject: ['reload'],
   components: {Comments},
   props: ['sidebarItems'],
-
+  data () {
+    return {
+      hackReset: true
+    }
+  },
   computed: {
     lastUpdated () {
       if (this.$page.lastUpdated) {
@@ -84,6 +87,10 @@ export default {
     },
 
     prev () {
+      this.hackReset = false
+      this.$nextTick(() => {
+        this.hackReset = true
+      })
       const prev = this.$page.frontmatter.prev
       if (prev === false) {
         return
@@ -95,6 +102,10 @@ export default {
     },
 
     next () {
+      this.hackReset = false
+      this.$nextTick(() => {
+        this.hackReset = true
+      })
       const next = this.$page.frontmatter.next
       if (next === false) {
         return

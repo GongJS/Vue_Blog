@@ -1,4 +1,5 @@
 ---
+title: project
 sidebar: auto
 comments: true
 ---

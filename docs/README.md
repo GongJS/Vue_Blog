@@ -2,7 +2,7 @@
 home: true                 
 heroImage: /hero.png      
 actionText: My Blog→       
-actionLink: /guide/        
+actionLink: /vuepress/        
 ---
 
 <div style="text-align: center">

@@ -1,4 +1,5 @@
 ---
+title: vuepress
 comments: true
 ---
 # 手摸手教你用VuePress打造个人Blog 
@@ -205,6 +206,6 @@ git commit -m 'deploy'     //提交文件内的所有文件
 git push -f git@github.com:GongJS/GongJS.github.io.git master   //代码上传到github里面新建的GongJS.github.io仓库。
 ```
 ### 查看结果
-脚本保存后，切换到项目根目录下，在终端里输入`yarn delopy-gh`,开始执行脚本命令。
+脚本保存后，切换到项目根目录下，在终端里输入`yarn deploy-gh`,开始执行脚本命令。
 代码提交成功后，这时候输入网址`https://gongjs.github.io`，下面就是见证[奇迹](https://gongjs.github.io)的时刻了.
 

@@ -29,7 +29,10 @@ module.exports = {
         nav: [
           {
             text: 'Blog',
-            link: '/guide/',
+            items: [
+              { text: 'vuepress', link: '/vuepress/' },
+              { text: 'koa2', link: '/koa2/' },
+            ]
           },
           {
             text: 'Project',
@@ -41,7 +44,7 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/guide/': genSidebarConfig('指南')
+          '/vuepress/': genSidebarConfig('指南')
         }
       }
     }
@@ -51,7 +54,7 @@ module.exports = {
 function genSidebarConfig (title) {
   return [
     {
-      title,
+      title:'手摸手教你用VuePress打造个人Blog',
       collapsable: false,
       children: [
         ''

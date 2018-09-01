@@ -1,5 +1,6 @@
 ---
 sidebar: auto
+title: resume
 comments: true
 ---
 
