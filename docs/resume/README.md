@@ -11,6 +11,7 @@ comments: true
 - 职业: 前端工程师 
 - 手机: 15563882537
 - Email: 382663074@qq.com
+- 微信: gongjs1991
 - [Github](https://github.com/GongJS) 
 - [个人博客/技术网站](https://gongjs.github.io/)
 

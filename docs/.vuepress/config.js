@@ -41,6 +41,10 @@ module.exports = {
           {
             text: 'Resume',
             link: '/resume/'
+          },
+          {
+            text: 'Friends',
+            link: '/friends/'
           }
         ],
         sidebar: {

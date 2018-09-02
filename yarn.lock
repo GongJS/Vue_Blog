@@ -1869,6 +1869,12 @@ caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000864:
   version "1.0.30000864"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000864.tgz#7a08c78da670f23c06f11aa918831b8f2dd60ddc"
 
+canvas-nest.js@2.0.3, canvas-nest.js@^2.0.3:
+  version "2.0.3"
+  resolved "http://registry.npm.taobao.org/canvas-nest.js/download/canvas-nest.js-2.0.3.tgz#1ee967d977a7a301b8e3eefd16702b812b8ed7f3"
+  dependencies:
+    size-sensor "^0.2.0"
+
 capture-exit@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/capture-exit/-/capture-exit-1.2.0.tgz#1c5fcc489fd0ab00d4f1ac7ae1072e3173fbab6f"
@@ -7520,6 +7526,10 @@ sisteransi@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-0.1.1.tgz#5431447d5f7d1675aac667ccd0b865a4994cb3ce"
 
+size-sensor@^0.2.0:
+  version "0.2.1"
+  resolved "http://registry.npm.taobao.org/size-sensor/download/size-sensor-0.2.1.tgz#e0f7351816a12cd8ba33475aa964112d1cf75439"
+
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
@@ -8423,6 +8433,12 @@ vm-browserify@0.0.4:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+vue-canvas-nest@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/vue-canvas-nest/download/vue-canvas-nest-2.0.0.tgz#427326fcb66ae7f13b515781864dc2cabee8667c"
+  dependencies:
+    canvas-nest.js "2.0.3"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"

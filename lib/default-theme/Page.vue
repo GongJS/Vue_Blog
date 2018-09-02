@@ -1,9 +1,7 @@
 <template>
-  <div class="page">
+  <div class="page" id="area">
     <slot name="top"/>
-
     <Content :custom="false"/>
-
     <div class="page-edit">
       <div class="edit-link" v-if="editLink"
       >
@@ -54,20 +52,31 @@
     </div>
 
     <slot name="bottom"/>
-    <comments v-if="hackReset"></comments>
+    <comments></comments>
   </div>
 </template>
 
 <script>
+
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 import Comments from './Comments.vue'
+import CanvasNest from 'canvas-nest.js'
 export default {
   components: {Comments},
   props: ['sidebarItems'],
   data () {
     return {
-      hackReset: true
+       config: {
+        color: '0,0,0',
+        count: 99,
+        zIndex: 0
+      },
+      el: '#area'
     }
+  },
+  mounted () {
+    const el = document.querySelector('#area')
+    this.cn = new CanvasNest(el, this.config)
   },
   computed: {
     lastUpdated () {
@@ -87,10 +96,6 @@ export default {
     },
 
     prev () {
-      this.hackReset = false
-      this.$nextTick(() => {
-        this.hackReset = true
-      })
       const prev = this.$page.frontmatter.prev
       if (prev === false) {
         return
@@ -102,10 +107,6 @@ export default {
     },
 
     next () {
-      this.hackReset = false
-      this.$nextTick(() => {
-        this.hackReset = true
-      })
       const next = this.$page.frontmatter.next
       if (next === false) {
         return
