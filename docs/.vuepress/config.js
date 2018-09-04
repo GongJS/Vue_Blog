@@ -45,23 +45,28 @@ module.exports = {
           {
             text: 'Friends',
             link: '/friends/'
+          },
+          {
+            text: '随笔',
+            link: '/essay/'
           }
         ],
         sidebar: {
-          '/vuepress/': genSidebarConfig('指南')
+          '/essay/':essaySidebarConfig('随笔')
         }
       }
     }
   }
 }
 
-function genSidebarConfig (title) {
+function essaySidebarConfig (title) {
   return [
     {
-      title:'手摸手教你用VuePress打造个人Blog',
+      title,
       collapsable: false,
       children: [
-        ''
+        '',
+        'touzi-2017'
       ]
     }
   ]

@@ -52,7 +52,7 @@
     </div>
 
     <slot name="bottom"/>
-    <comments></comments>
+    <comments v-if="hackReset"></comments>
   </div>
 </template>
 
@@ -60,7 +60,6 @@
 
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 import Comments from './Comments.vue'
-import CanvasNest from 'canvas-nest.js'
 export default {
   components: {Comments},
   props: ['sidebarItems'],
@@ -71,10 +70,14 @@ export default {
         count: 99,
         zIndex: 0
       },
-      el: '#area'
+      hackReset:true
     }
   },
   mounted () {
+    let CanvasNest
+    if (typeof window !== 'undefined') {
+      CanvasNest = require('canvas-nest.js')
+    }
     const el = document.querySelector('#area')
     this.cn = new CanvasNest(el, this.config)
   },
@@ -96,6 +99,10 @@ export default {
     },
 
     prev () {
+      this.hackReset = false;//销毁组件
+      this.$nextTick(() => {
+        this.hackReset = true;//重建组件
+     });
       const prev = this.$page.frontmatter.prev
       if (prev === false) {
         return
@@ -107,6 +114,10 @@ export default {
     },
 
     next () {
+      this.hackReset = false;//销毁组件
+      this.$nextTick(() => {
+       this.hackReset = true;//重建组件
+     });
       const next = this.$page.frontmatter.next
       if (next === false) {
         return

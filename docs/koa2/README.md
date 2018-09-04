@@ -1105,7 +1105,7 @@ export default {
 // 新增一个方法，通过用户名查找
 const getUserAuth = async function (ctx, next){
   const data = ctx.request.body; // post过来的数据存在request.body里
-  const userInfo = async user.getUserByName(data.name)
+  const userInfo = await user.getUserByName(data.name)
 
   if(userInfo != null){ // 如果查无此用户会返回null
     if(userInfo.password != data.password){
