@@ -52,7 +52,7 @@
     </div>
 
     <slot name="bottom"/>
-    <comments v-if="hackReset"></comments>
+    <comments></comments>
   </div>
 </template>
 
@@ -70,7 +70,6 @@ export default {
         count: 99,
         zIndex: 0
       },
-      hackReset:true
     }
   },
   mounted () {
@@ -99,10 +98,6 @@ export default {
     },
 
     prev () {
-      this.hackReset = false;//销毁组件
-      this.$nextTick(() => {
-        this.hackReset = true;//重建组件
-     });
       const prev = this.$page.frontmatter.prev
       if (prev === false) {
         return
@@ -114,10 +109,6 @@ export default {
     },
 
     next () {
-      this.hackReset = false;//销毁组件
-      this.$nextTick(() => {
-       this.hackReset = true;//重建组件
-     });
       const next = this.$page.frontmatter.next
       if (next === false) {
         return

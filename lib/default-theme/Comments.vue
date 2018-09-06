@@ -28,17 +28,17 @@ export default {
       placeholder: '欢迎留言与我分享您的想法...'
     });
   },
-  //  watch: {
-  //   '$route' (to, from) {
-  //     if(to.path !==  from.path){
-  //       // location.assign(location)
-  //       this.$router.go(0)
-  //       //console.log('我在这里要刷新一下')
-  //     }else{
+    watch: {
+     '$route' (to, from) {
+        if(to.path !==  from.path){
+          // location.assign(location)
+          this.$router.go(0)
+          //console.log('我在这里要刷新一下')
+        }else{
        
-  //     }
-  //   }
-  // }, 
+       }
+     }
+   }, 
 }
 </script>
 

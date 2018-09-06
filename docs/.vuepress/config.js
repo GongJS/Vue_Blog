@@ -32,6 +32,7 @@ module.exports = {
             items: [
               { text: 'vuepress', link: '/vuepress/' },
               { text: 'koa2', link: '/koa2/' },
+              { text: 'JS', link: '/JS/' },
             ]
           },
           {
