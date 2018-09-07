@@ -21,7 +21,7 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "8d2e993563ea7b7bccc8b467804ab8e4"
+    "revision": "c6edd8e80ed742f036c4209c3fdd8544"
   },
   {
     "url": "assets/css/0.styles.29665281.css",
@@ -220,28 +220,28 @@ self.__precacheManifest = [
     "revision": "27dcc0151bee9c40e89e6d64d08d6d65"
   },
   {
-    "url": "assets/js/8.28ecf96a.js",
-    "revision": "e12ed9734febd72aec0d265453985870"
+    "url": "assets/js/8.db94cc3d.js",
+    "revision": "33fe18e632e9d663fbdc7d4d272297c7"
   },
   {
     "url": "assets/js/9.b44fd282.js",
     "revision": "0033b6ed2f34e4da22d440f34614d8f9"
   },
   {
-    "url": "assets/js/app.e2588eef.js",
-    "revision": "4eecb5baec77b302e763b37cbdd90119"
+    "url": "assets/js/app.2ab70ed6.js",
+    "revision": "a86212e3054b3f1dd50b75a053bb92ea"
   },
   {
     "url": "essay/index.html",
-    "revision": "7c20ad957ae8b5bb0cb2f81604ada005"
+    "revision": "e4f1ad4b682c5a97328e4b56946f2fe6"
   },
   {
     "url": "essay/touzi-2017.html",
-    "revision": "6f12d120cdf98593240498f0fad5260a"
+    "revision": "23f77bf48549294d2b8636d6c8138fda"
   },
   {
     "url": "friends/index.html",
-    "revision": "9640e5bd36740da2db29dd6dc1c65cfc"
+    "revision": "332127831f3099e69519765bf2282d41"
   },
   {
     "url": "hero.png",
@@ -301,15 +301,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "bca1492d5c2d21b33aa24ac6d641c596"
+    "revision": "2da4b776cd21cd1983d7acc27d1a5431"
   },
   {
     "url": "JS/index.html",
-    "revision": "56541b2bc7f06cdcf7ebcd1f9fbe4752"
+    "revision": "efed0d2a07e14628baf80c9db1837eee"
   },
   {
     "url": "koa2/index.html",
-    "revision": "065365f02cfcbeb84dd24eb06e0ed67c"
+    "revision": "0794d38eed249b00bb19dab263daa38d"
   },
   {
     "url": "line-numbers-desktop.png",
@@ -325,15 +325,15 @@ self.__precacheManifest = [
   },
   {
     "url": "project/index.html",
-    "revision": "ff95d628d2e39667c75a61ba7749a309"
+    "revision": "cc7f0e71ca55c3d2b6065d438fa98272"
   },
   {
     "url": "resume/index.html",
-    "revision": "f474c6e8118219a74b3cd7569db81611"
+    "revision": "6cdc80f991b33084f786b1f6e5e8a99c"
   },
   {
     "url": "vuepress/index.html",
-    "revision": "5e026ff5fc9e303726819478d7e357b0"
+    "revision": "7459b6364411a9d6364913c2bdc411ac"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

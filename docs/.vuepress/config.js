@@ -53,7 +53,8 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/essay/':essaySidebarConfig('随笔')
+          '/essay/':essaySidebarConfig('随笔'),
+          '/JS/':jsSidebarConfig('JS学习笔记'),
         }
       }
     }
@@ -68,6 +69,25 @@ function essaySidebarConfig (title) {
       children: [
         '',
         'touzi-2017'
+      ]
+    }
+  ]
+}
+
+function jsSidebarConfig (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'variable', 
+        'scope',
+        'prototype',
+        'async',
+        'date',
+        'array-obj',
+        'JS-web-API'
       ]
     }
   ]
