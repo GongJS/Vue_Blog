@@ -2,7 +2,7 @@
 title: vuepress
 comments: true
 ---
-# 手摸手教你用VuePress打造个人Blog 
+# 手摸手教你用VuePress打造个人Blog
 
 VuePress是以Vue驱动的静态网站生成器，是一个由[Vue](http://vuejs.org/)、[Vue Router](https://github.com/vuejs/vue-router) 和 [webpack](http://webpack.js.org/)驱动的单页应用。在VuePress中，你可以使用Markdown编写文档，然后生成网页，每一个由VuePress生成的页面都带有预渲染好的HTML，也因此具有非常好的加载性能和搜索引擎优化。同时，一旦页面被加载，Vue将接管这些静态内容，并将其转换成一个完整的单页应用，其他的页面则会只在用户浏览到的时候才按需加载。
 
@@ -36,7 +36,7 @@ yarn dev       //启动服务
 .
 ├── .vuepress
 │   ├── components  //公用组件
-│   ├── config.js   //基础配置文件，也是我们主要修改的文件 
+│   ├── config.js   //基础配置文件，也是我们主要修改的文件
 │   └── public      //静态资源(图片)
 ├── config
 │   └── README.md          //基础配置文件配置说明，可删除(英文说明)
@@ -58,14 +58,14 @@ yarn dev       //启动服务
 │   ├── default-theme-config
 │   └── guide
 └── README.md               //首页配置文件
-  
+
 ```
 `docs`文件夹里包含了配置文件和说明文档，其中英文说明文档在根目录下，包括`config`、`default-theme-config`,这两个文件跟`zh`文件夹内的`config`、`default-theme-config`是一样的。因为我们不考虑做双语Blog(英文和中文)，所以可以把根目录下的`config`、`default-theme-config`、`guide`这三个文件用`zh`文件夹里面相同的三个文件夹替换,再把`zh`文件夹及文件夹内的`README.md`一起删掉，调整完后的项目结构如下：
 ```
 .
 ├── .vuepress
 │   ├── components        //公用组件
-│   ├── config.js         //基础配置文件，也是我们主要修改的文件 
+│   ├── config.js         //基础配置文件，也是我们主要修改的文件
 │   └── public            //静态资源(图片)
 ├── config
 │   └── README.md            //基础配置文件配置说明，可删除(中文说明)
@@ -89,11 +89,11 @@ yarn dev       //启动服务
 
 ### Blog信息配置
 ``` js
- dest: 'vuepress',          //运行yarn build命令后打包生成文件的地址，这里会在项目的根目录下生成一个vuepress的文件夹     
+ dest: 'vuepress',          //运行yarn build命令后打包生成文件的地址，这里会在项目的根目录下生成一个vuepress的文件夹
   locales: {                //多语言配置，我们这里配置成只使用中文
-    '/': {            
+    '/': {
       lang: 'zh-CN',        //Blog语言
-      title: 'GongJS',      //Blog标题  
+      title: 'GongJS',      //Blog标题
       description: 'Talk is cheap. Show me the code.'  //Blog描述，会在首页展示出来,这里我换成了linus大神的名言，提升一下Blog的逼格，嘿嘿嘿～～～
     }
   },
@@ -201,7 +201,7 @@ actionLink: /guide/           //首页按键的跳转路径
 ``` sh
 cd vuepress    //进入到打包后的输出文件夹
 git init       //初始化git仓库
-git add -A     
+git add -A
 git commit -m 'deploy'     //提交文件内的所有文件
 git push -f git@github.com:GongJS/GongJS.github.io.git master   //代码上传到github里面新建的GongJS.github.io仓库。
 ```
@@ -209,3 +209,4 @@ git push -f git@github.com:GongJS/GongJS.github.io.git master   //代码上传�
 脚本保存后，切换到项目根目录下，在终端里输入`yarn deploy-gh`,开始执行脚本命令。
 代码提交成功后，这时候输入网址`https://gongjs.github.io`，下面就是见证[奇迹](https://gongjs.github.io)的时刻了.
 
+<RightMenu />
