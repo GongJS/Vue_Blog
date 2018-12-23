@@ -8,17 +8,35 @@ module.exports = {
     }
   },
   head: [
-    ['link', { rel: 'icon', href: `/logo.png` }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['link', {
+      rel: 'icon',
+      href: `/logo.png`
+    }],
+    ['link', {
+      rel: 'manifest',
+      href: '/manifest.json'
+    }],
+    ['meta', {
+      name: 'theme-color',
+      content: '#3eaf7c'
+    }],
+    ['meta', {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes'
+    }],
     [
       'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
+      {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black'
+      }
     ],
     [
       'link',
-      { rel: 'apple-touch-icon', href: `/icons/apple-touch-icon-152x152.png` }
+      {
+        rel: 'apple-touch-icon',
+        href: `/icons/apple-touch-icon-152x152.png`
+      }
     ],
     [
       'link',
@@ -35,7 +53,10 @@ module.exports = {
         content: '/icons/msapplication-icon-144x144.png'
       }
     ],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+    ['meta', {
+      name: 'msapplication-TileColor',
+      content: '#000000'
+    }]
   ],
   serviceWorker: true,
   theme: 'vue',
@@ -45,13 +66,24 @@ module.exports = {
     docsDir: 'docs',
     locales: {
       '/': {
-        nav: [
-          {
+        nav: [{
             text: 'Blog',
-            items: [
-              { text: 'vuepress', link: '/vuepress/' },
-              { text: 'koa2', link: '/koa2/' },
-              { text: 'JS', link: '/JS/' }
+            items: [{
+                text: 'vuepress',
+                link: '/vuepress/'
+              },
+              {
+                text: 'koa2',
+                link: '/koa2/'
+              },
+              {
+                text: 'JS',
+                link: '/JS/'
+              },
+              {
+                text: 'CSS',
+                link: '/css/'
+              }
             ]
           },
           {
@@ -74,55 +106,63 @@ module.exports = {
         sidebar: {
           '/koa2/': koaSidebarConfig('koa2'),
           '/essay/': essaySidebarConfig('随笔'),
-          '/JS/': jsSidebarConfig('JS学习笔记')
+          '/JS/': jsSidebarConfig('JS学习笔记'),
+          '/css/': cssSidebarConfig('css'),
         }
       }
     }
   }
 }
+
 function koaSidebarConfig(title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '',
-        '启动koa服务',
-        '构建前端页面',
-        '搭建后端环境',
-        '登录功能',
-        '实现员工的增删改查',
-        '项目部署',
-        '写在最后'
-      ]
-    }
-  ]
+  return [{
+    title,
+    collapsable: false,
+    children: [
+      '',
+      '启动koa服务',
+      '构建前端页面',
+      '搭建后端环境',
+      '登录功能',
+      '实现员工的增删改查',
+      '项目部署',
+      '写在最后'
+    ]
+  }]
 }
+
 function essaySidebarConfig(title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: ['', 'touzi-2017']
-    }
-  ]
+  return [{
+    title,
+    collapsable: false,
+    children: ['', 'touzi-2017']
+  }]
 }
 
 function jsSidebarConfig(title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '',
-        'variable',
-        'scope',
-        'prototype',
-        'async',
-        'date',
-        'array-obj',
-        'JS-web-API'
-      ]
-    }
-  ]
+  return [{
+    title,
+    collapsable: false,
+    children: [
+      '',
+      'variable',
+      'scope',
+      'prototype',
+      'async',
+      'date',
+      'array-obj',
+      'JS-web-API'
+    ]
+  }]
+}
+
+function cssSidebarConfig(title) {
+  return [{
+    title,
+    collapsable: false,
+    children: [
+      '',
+      '堆叠上下文'
+    ]
+  }]
 }
