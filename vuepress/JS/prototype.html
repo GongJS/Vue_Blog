@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>原型和原型链 | GongJS</title>
+    <meta name="description" content="Talk is cheap. Show me the code.">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.d11e3aca.css" as="style"><link rel="preload" href="/assets/js/app.f5c29c1f.js" as="script"><link rel="preload" href="/assets/js/13.a09c4a2d.js" as="script"><link rel="prefetch" href="/assets/js/2.7117a227.js"><link rel="prefetch" href="/assets/js/3.77d4ca05.js"><link rel="prefetch" href="/assets/js/4.e2cbffb8.js"><link rel="prefetch" href="/assets/js/5.b74d96c6.js"><link rel="prefetch" href="/assets/js/6.ee178cc6.js"><link rel="prefetch" href="/assets/js/7.0d862c02.js"><link rel="prefetch" href="/assets/js/8.0d64cd75.js"><link rel="prefetch" href="/assets/js/9.530ec94f.js"><link rel="prefetch" href="/assets/js/10.9f98ca6a.js"><link rel="prefetch" href="/assets/js/11.7849bdd0.js"><link rel="prefetch" href="/assets/js/12.dac065a8.js"><link rel="prefetch" href="/assets/js/14.aadc0260.js"><link rel="prefetch" href="/assets/js/15.877ee9fb.js"><link rel="prefetch" href="/assets/js/16.a83cd65f.js"><link rel="prefetch" href="/assets/js/17.2ca48000.js"><link rel="prefetch" href="/assets/js/18.b123fdf9.js"><link rel="prefetch" href="/assets/js/19.995ae0d5.js"><link rel="prefetch" href="/assets/js/20.8950d8b1.js"><link rel="prefetch" href="/assets/js/21.ec69d665.js"><link rel="prefetch" href="/assets/js/22.cdb3022f.js"><link rel="prefetch" href="/assets/js/23.8669b7cc.js"><link rel="prefetch" href="/assets/js/24.1c88333b.js"><link rel="prefetch" href="/assets/js/25.2e4cf4a0.js"><link rel="prefetch" href="/assets/js/26.a5f44df2.js"><link rel="prefetch" href="/assets/js/27.621c85a7.js"><link rel="prefetch" href="/assets/js/28.d64bae69.js"><link rel="prefetch" href="/assets/js/29.e37e014e.js"><link rel="prefetch" href="/assets/js/30.9d6f45b3.js"><link rel="prefetch" href="/assets/js/31.d7283254.js"><link rel="prefetch" href="/assets/js/32.a8d109e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d11e3aca.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">GongJS</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/" class="nav-link">vuepress</a></li><li class="dropdown-item"><!----> <a href="/koa2/" class="nav-link">koa2</a></li><li class="dropdown-item"><!----> <a href="/JS/" class="nav-link router-link-active">JS</a></li><li class="dropdown-item"><!----> <a href="/css/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><a href="/project/" class="nav-link">Project</a></div><div class="nav-item"><a href="/resume/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/friends/" class="nav-link">Friends</a></div><div class="nav-item"><a href="/essay/" class="nav-link">随笔</a></div> <a href="https://github.com/gongjs/Vue_Blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/" class="nav-link">vuepress</a></li><li class="dropdown-item"><!----> <a href="/koa2/" class="nav-link">koa2</a></li><li class="dropdown-item"><!----> <a href="/JS/" class="nav-link router-link-active">JS</a></li><li class="dropdown-item"><!----> <a href="/css/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><a href="/project/" class="nav-link">Project</a></div><div class="nav-item"><a href="/resume/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/friends/" class="nav-link">Friends</a></div><div class="nav-item"><a href="/essay/" class="nav-link">随笔</a></div> <a href="https://github.com/gongjs/Vue_Blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div class="carbon-ads"></div> <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>JS学习笔记</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/JS/" class="sidebar-link">开始</a></li><li><a href="/JS/variable.html" class="sidebar-link">变量</a></li><li><a href="/JS/scope.html" class="sidebar-link">作用域</a></li><li><a href="/JS/prototype.html" class="active sidebar-link">原型和原型链</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/JS/prototype.html#构造函数" class="sidebar-link">构造函数</a></li><li class="sidebar-sub-header"><a href="/JS/prototype.html#构造函数-扩展" class="sidebar-link">构造函数-扩展</a></li><li class="sidebar-sub-header"><a href="/JS/prototype.html#原型规则" class="sidebar-link">原型规则</a></li><li class="sidebar-sub-header"><a href="/JS/prototype.html#原型链" class="sidebar-link">原型链</a></li><li class="sidebar-sub-header"><a href="/JS/prototype.html#原型链继承-封装dom查询例子" class="sidebar-link">原型链继承-封装DOM查询例子</a></li></ul></li><li><a href="/JS/async.html" class="sidebar-link">异步</a></li><li><a href="/JS/date.html" class="sidebar-link">日期/随机数</a></li><li><a href="/JS/array-obj.html" class="sidebar-link">数组/对象</a></li><li><a href="/JS/JS-web-API.html" class="sidebar-link">JS-Web-API</a></li></ul></div></li></ul> </div> <div id="area" class="page"> <div class="content"><h1 id="原型和原型链"><a href="#原型和原型链" aria-hidden="true" class="header-anchor">#</a> 原型和原型链</h1> <h2 id="构造函数"><a href="#构造函数" aria-hidden="true" class="header-anchor">#</a> 构造函数</h2> <p><code>new</code>一个对象的过程:</p> <ol><li>创建一个新的对象</li> <li>this指向这个新对象</li> <li>执行代码，即对this赋值</li> <li>返回this</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token keyword">class</span> <span class="token operator">=</span> <span class="token string">&quot;class-1&quot;</span>
+    <span class="token comment">//return this   //默认有这一行</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token string">'zhangshan'</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> f1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token string">'lisi'</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span>  <span class="token comment">//创建多个对象</span>
+</code></pre></div><p><code>new</code>一个对象的过程</p> <h2 id="构造函数-扩展"><a href="#构造函数-扩展" aria-hidden="true" class="header-anchor">#</a> 构造函数-扩展</h2> <ol><li>var a = {} 其实是var a = new Object()的语法糖</li> <li>var a = [] 其实是var a = new Arrayt()的语法糖  //推荐var a={},a=[]这种写法，可读性高，执行效率高</li> <li>function Foo() {...}  其实是var Foo = new Function(...)</li> <li>使用instanceof判断一个函数是否是另一个变量的构造函数</li></ol> <h2 id="原型规则"><a href="#原型规则" aria-hidden="true" class="header-anchor">#</a> 原型规则</h2> <ol><li><p>所有的引用类型（数组、对象、函数），都有一个<code>__proto__（隐式原型）</code>属性,属性值是一个普通的对象</p></li> <li><p>所有的函数，都有一个<code>prototype（显式原型）</code>属性，属性值也是一个普通的对象(对象里面的值是一个构造函数)</p></li> <li><p>所有的引用类型（数组、对象、函数），都有一个<code>__proto__（隐式原型）</code>属性值指向它的构造函数的<code>prototype</code>属性值</p></li> <li><p>当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么回去它的<code>__proto__</code>(即它的构造函数的prototype)中寻找</p></li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> obj<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> arr<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+fn<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span> <span class="token comment">//{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}  </span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>obj<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span> <span class="token comment">//{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fn<span class="token punctuation">.</span>obj<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span> <span class="token comment">//{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fn<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>  <span class="token comment">// {constructor: ƒ}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">//true</span>
+</code></pre></div><h2 id="原型链"><a href="#原型链" aria-hidden="true" class="header-anchor">#</a> 原型链</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//构造函数</span>
+<span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+<span class="token punctuation">}</span>
+Foo<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">alertName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//创建实例</span>
+<span class="token keyword">var</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token string">'zhangshan'</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span><span class="token function-variable function">printName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//测试</span>
+f<span class="token punctuation">.</span><span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//'zhangshan'</span>
+f<span class="token punctuation">.</span><span class="token function">alertName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//'zhangshan'</span>
+f<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//要去f.__proto__.proto__中查找</span>
+
+<span class="token comment">//循环对象自身的属性</span>
+<span class="token keyword">var</span> item
+<span class="token keyword">for</span> <span class="token punctuation">(</span>item <span class="token keyword">in</span> f<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//高级浏览器已经在for in中屏蔽了来自原型的属性</span>
+    <span class="token comment">// 但是这里建议大家还是加上这个判断，保证程序的健壮性</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div style="text-align: center"><img src="/assets/img/yuanxing.de0e4ec4.jpg"></div> <h2 id="原型链继承-封装dom查询例子"><a href="#原型链继承-封装dom查询例子" aria-hidden="true" class="header-anchor">#</a> 原型链继承-封装DOM查询例子</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Elem</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>elem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+Elem<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">html</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> elem <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>elem
+    <span class="token keyword">if</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        elem<span class="token punctuation">.</span>innerHtml <span class="token operator">=</span> val
+        <span class="token keyword">return</span> <span class="token keyword">this</span>  <span class="token comment">//链式操作</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> elem<span class="token punctuation">.</span>innerHtml
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+Elem<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">on</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>type<span class="token punctuation">,</span> fn<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> elem <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>elem
+    elem<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> fn<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span> <span class="token comment">//链式操作</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> div1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Elem</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span>
+<span class="token comment">// console.log(div1.html())</span>
+div1<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">'&lt;p&gt;hello&lt;/p&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'clicked'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">'&lt;p&gt;javascript&lt;/P&gt;'</span><span class="token punctuation">)</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/JS/scope.html" class="prev">
+          作用域
+        </a></span> <span class="next"><a href="/JS/async.html">
+          异步
+        </a>
+        →
+      </span></p></div> <div class="bsa-cpc-wrapper"><div class="bsa-cpc"></div></div> <div class="vcomment"><div id="vcomments"></div></div></div> <!----></div></div>
+    <script src="/assets/js/13.a09c4a2d.js" defer></script><script src="/assets/js/app.f5c29c1f.js" defer></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c3446600de53c605ba4f6c792e47dff9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </body>
+</html>

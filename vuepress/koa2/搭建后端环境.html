@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>搭建后端环境 | GongJS</title>
+    <meta name="description" content="Talk is cheap. Show me the code.">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.d11e3aca.css" as="style"><link rel="preload" href="/assets/js/app.f5c29c1f.js" as="script"><link rel="preload" href="/assets/js/26.a5f44df2.js" as="script"><link rel="prefetch" href="/assets/js/2.7117a227.js"><link rel="prefetch" href="/assets/js/3.77d4ca05.js"><link rel="prefetch" href="/assets/js/4.e2cbffb8.js"><link rel="prefetch" href="/assets/js/5.b74d96c6.js"><link rel="prefetch" href="/assets/js/6.ee178cc6.js"><link rel="prefetch" href="/assets/js/7.0d862c02.js"><link rel="prefetch" href="/assets/js/8.0d64cd75.js"><link rel="prefetch" href="/assets/js/9.530ec94f.js"><link rel="prefetch" href="/assets/js/10.9f98ca6a.js"><link rel="prefetch" href="/assets/js/11.7849bdd0.js"><link rel="prefetch" href="/assets/js/12.dac065a8.js"><link rel="prefetch" href="/assets/js/13.a09c4a2d.js"><link rel="prefetch" href="/assets/js/14.aadc0260.js"><link rel="prefetch" href="/assets/js/15.877ee9fb.js"><link rel="prefetch" href="/assets/js/16.a83cd65f.js"><link rel="prefetch" href="/assets/js/17.2ca48000.js"><link rel="prefetch" href="/assets/js/18.b123fdf9.js"><link rel="prefetch" href="/assets/js/19.995ae0d5.js"><link rel="prefetch" href="/assets/js/20.8950d8b1.js"><link rel="prefetch" href="/assets/js/21.ec69d665.js"><link rel="prefetch" href="/assets/js/22.cdb3022f.js"><link rel="prefetch" href="/assets/js/23.8669b7cc.js"><link rel="prefetch" href="/assets/js/24.1c88333b.js"><link rel="prefetch" href="/assets/js/25.2e4cf4a0.js"><link rel="prefetch" href="/assets/js/27.621c85a7.js"><link rel="prefetch" href="/assets/js/28.d64bae69.js"><link rel="prefetch" href="/assets/js/29.e37e014e.js"><link rel="prefetch" href="/assets/js/30.9d6f45b3.js"><link rel="prefetch" href="/assets/js/31.d7283254.js"><link rel="prefetch" href="/assets/js/32.a8d109e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d11e3aca.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">GongJS</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/" class="nav-link">vuepress</a></li><li class="dropdown-item"><!----> <a href="/koa2/" class="nav-link router-link-active">koa2</a></li><li class="dropdown-item"><!----> <a href="/JS/" class="nav-link">JS</a></li><li class="dropdown-item"><!----> <a href="/css/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><a href="/project/" class="nav-link">Project</a></div><div class="nav-item"><a href="/resume/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/friends/" class="nav-link">Friends</a></div><div class="nav-item"><a href="/essay/" class="nav-link">随笔</a></div> <a href="https://github.com/gongjs/Vue_Blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress/" class="nav-link">vuepress</a></li><li class="dropdown-item"><!----> <a href="/koa2/" class="nav-link router-link-active">koa2</a></li><li class="dropdown-item"><!----> <a href="/JS/" class="nav-link">JS</a></li><li class="dropdown-item"><!----> <a href="/css/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><a href="/project/" class="nav-link">Project</a></div><div class="nav-item"><a href="/resume/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/friends/" class="nav-link">Friends</a></div><div class="nav-item"><a href="/essay/" class="nav-link">随笔</a></div> <a href="https://github.com/gongjs/Vue_Blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div class="carbon-ads"></div> <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>koa2</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/koa2/" class="sidebar-link">全栈开发实战</a></li><li><a href="/koa2/启动koa服务.html" class="sidebar-link">启动koa服务</a></li><li><a href="/koa2/构建前端页面.html" class="sidebar-link">构建前端页面</a></li><li><a href="/koa2/搭建后端环境.html" class="active sidebar-link">搭建后端环境</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/koa2/搭建后端环境.html#mysql" class="sidebar-link">mysql</a></li><li class="sidebar-sub-header"><a href="/koa2/搭建后端环境.html#sequelize" class="sidebar-link">Sequelize</a></li><li class="sidebar-sub-header"><a href="/koa2/搭建后端环境.html#测试-api" class="sidebar-link">测试 API</a></li></ul></li><li><a href="/koa2/登录功能.html" class="sidebar-link">登录功能</a></li><li><a href="/koa2/实现员工的增删改查.html" class="sidebar-link">实现员工的增删改查</a></li><li><a href="/koa2/项目部署.html" class="sidebar-link">项目部署</a></li><li><a href="/koa2/写在最后.html" class="sidebar-link">写在最后</a></li></ul></div></li></ul> </div> <div id="area" class="page"> <div class="content"><h2 id="mysql"><a href="#mysql" aria-hidden="true" class="header-anchor">#</a> mysql</h2> <p>如果本地还没有配置好<code>mysql</code>的开发环境，可以去<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener noreferrer">官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>下载<code>MySQL Community Server</code>并安装，</p> <div class="tip custom-block"><p class="custom-block-title">提示</p> <p>在安装软件的过程中，要记得复制<code>mysql</code>的初始密码，安装完后再改成自己记得住的密码，如<code>123456</code></p></div> <p>大家根据自己的电脑系统选择相应的版本下载就行，我安装的是<code>mac版的5.7.23</code>.
+然后安装可视化工具来操作我们的本地数据库，我们使用官方的<a href="https://dev.mysql.com/downloads/workbench/" target="_blank" rel="noopener noreferrer">workbench<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，不需要破解就能免费使用，因为要配合我们的本地<code>mysql</code>版本，<code>workbench</code>的版本选择<code>6.3.10</code>。
+安装完后打开<code>workbench</code>软件，连接本地数据库。默认端口是：3306，用户名：root，这里的密码不要使用初始密码，不然可能会连接不上，用更改过后的密码登录。
+登录成功后，新建一个名为<code>Demo</code>的 schema，在<code>Demo</code>里新建两张 table，一张是<code>user</code>，一张是<code>management</code>,如下图：</p> <div style="text-align: center"><img src="/assets/img/workbench-1.b8235887.jpg"></div> <p><code>user</code>表的内容如下：</p> <div style="text-align: left;width:450px;margin:0 auto;"><table><tr><th width="150px">字段</th> <th width="150px">类型</th> <th width="150px">说明</th></tr> <tr><td>id</td> <td>int(自增)</td> <td>用户的id</td></tr> <tr><td>username</td> <td>VARCHAR(45)</td> <td>用户名字</td></tr> <tr><td>password </td> <td>VARCHAR(128)</td> <td>用户密码</td></tr></table></div> <p><code>management</code>表的内容如下：</p> <div style="text-align: left;width:450px;margin:0 auto;"><table><tr><th width="150px">字段</th> <th width="150px">类型</th> <th width="150px">说明</th></tr> <tr><td>id</td> <td>int(自增)</td> <td>用户的id</td></tr> <tr><td>username</td> <td>VARCHAR(45)</td> <td>用户名字</td></tr> <tr><td>sex </td> <td>VARCHAR(45)</td> <td>性别</td></tr> <tr><td>state </td> <td>VARCHAR(45)</td> <td>状态</td></tr> <tr><td>interest </td> <td>VARCHAR(45)</td> <td>爱好</td></tr> <tr><td>birthday </td> <td>DATE</td> <td>生日</td></tr></table></div> <h2 id="sequelize"><a href="#sequelize" aria-hidden="true" class="header-anchor">#</a> Sequelize</h2> <p>感谢互联网的大神们带我们走过了刀耕火种的时代，有了<code>vue</code>、<code>react</code>这样优秀的 MVVM 框架，我们再也不用去为了操作 DOM 而头疼，当然，我们也不需要再用原生的<code>sql</code>语句去和数据库打交道。现在流行把关系数据库的表结构映射到对象上，也就是传说中的 ORM 技术-Object-Relational Mapping。在本教程里，使用为 node 量身打造的<a href="http://docs.sequelizejs.com/" target="_blank" rel="noopener noreferrer">Sequelize<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，在<a href="https://github.com/sequelize/sequelize" target="_blank" rel="noopener noreferrer">github<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>上已经有了 15000 多个 star 了。开始安装：</p> <div class="language- extra-class"><pre class="language-text"><code>yarn add mysql@^2.16.0    //安装mysql驱动
+yarn global add sequelize-auto@^0.4.29 //自动生成schema
+yarn add sequelize@^3.28.0
+</code></pre></div><p>进入 server 的目录，执行如下语句 sequelize-auto -o &quot;./schema&quot; -d Demo -h 127.0.0.1 -u root -p 3306 -x XXXXX -e mysql，（其中 -o 参数后面的是输出的文件夹目录， -d 参数后面的是数据库名， -h 参数后面是数据库地址， -u 参数后面是数据库用户名， -p 参数后面是端口号， -x 参数后面是数据库密码，这个根据自己的数据库密码来！ -e 参数后面指定数据库为 mysql）</p> <p>然后就会在 schema 文件夹下自动生成两个<code>management.js</code>和<code>user.js</code>两个文件：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//management.js</span>
+
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequelize<span class="token punctuation">,</span> DataTypes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span>
+    <span class="token string">'management'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      username<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      sex<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      state<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      interest<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      birthday<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">DATEONLY</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      tableName<span class="token punctuation">:</span> <span class="token string">'management'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// user.js</span>
+
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequelize<span class="token punctuation">,</span> DataTypes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span>
+    <span class="token string">'user'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      username<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      password<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      tableName<span class="token punctuation">:</span> <span class="token string">'user'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>用<code>sequelize-auto</code>能够根据数据库里的字段自动帮我们定义表结构。生成的数据库表结构文件也都自动帮我们 module.exports 出来了，可以直接导入到别的文件使用。</p> <p>在<code>server</code>目录下的<code>config</code>目录下我们新建一个<code>db.js</code>，用于初始化 Sequelize 和数据库的连接。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// db.js</span>
+
+<span class="token keyword">const</span> Sequelize <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'sequelize'</span><span class="token punctuation">)</span> <span class="token comment">// 引入sequelize</span>
+<span class="token comment">// 使用url连接的形式进行连接</span>
+<span class="token keyword">const</span> Demo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sequelize</span><span class="token punctuation">(</span><span class="token string">'mysql://root:XXXX@localhost/Demo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  define<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    timestamps<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token comment">// 取消Sequelzie自动给数据表加入时间戳（createdAt以及updatedAt）</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  Demo <span class="token comment">// 将Demo暴露出接口方便Model调用</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="danger custom-block"><p class="custom-block-title">更改密码</p> <p>要将 root 后面的<code>XXXX</code>换成自己的本读数据库秘密</p></div> <p>在<code>models</code>文件夹里将数据库和表结构文件连接起来。在这个文件夹下新建一个<code>user.js</code>的文件。我们先来写一个查询用户 id 的东西。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// models/user.js</span>
+<span class="token keyword">import</span> db <span class="token keyword">from</span> <span class="token string">'../config/db.js'</span> <span class="token comment">// 引入user的表结构</span>
+<span class="token keyword">const</span> userModel <span class="token operator">=</span> <span class="token string">'../schema/user.js'</span>
+<span class="token keyword">const</span> DemoDb <span class="token operator">=</span> db<span class="token punctuation">.</span>Demo <span class="token comment">// 引入数据-</span>
+<span class="token keyword">const</span> User <span class="token operator">=</span> DemoDb<span class="token punctuation">.</span><span class="token keyword">import</span><span class="token punctuation">(</span>userModel<span class="token punctuation">)</span> <span class="token comment">// 用sequelize的import方法引入表结构，实例化了basicTable。</span>
+
+<span class="token keyword">const</span> getUserById <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> userInfo <span class="token operator">=</span> <span class="token keyword">await</span> User<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// 用await控制异步操作，将返回的Promise对象里的数据返回出来。也就实现了“同步”的写法获取异步IO操作的数据</span>
+    where<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> id
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> userInfo <span class="token comment">// 返回数据</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  getUserById <span class="token comment">// 导出getUserById的方法，将会在controller里调用</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接着我们在 controllers 写一个 user 的 controller，来执行这个方法，并返回结果：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//controllers/user.js</span>
+<span class="token keyword">import</span> user <span class="token keyword">from</span> <span class="token string">'../models/user.js'</span>
+<span class="token keyword">const</span> getUserInfo <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> id <span class="token operator">=</span> ctx<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token comment">// 获取url里传过来的参数里的id</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> user<span class="token punctuation">.</span><span class="token function">getUserById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 通过await“同步”地返回查询结果</span>
+  ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>body <span class="token operator">=</span> result <span class="token comment">// 将请求的结果放到response的body里返回</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  getUserInfo <span class="token comment">// 把获取用户信息的方法暴露出去</span>
+<span class="token punctuation">}</span> <span class="token comment">// 把获取用户信息的方法暴露出去</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>下面需要定义路由，前端需要通过指定的路由，才能够调用这个方法。
+::: 提示
+为了省事，教程里的所有请求都采用 post 请求
+:::</p> <p>在<code>routes</code>文件夹下新建一个<code>router.js</code>的文件。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//routes/router.js</span>
+
+<span class="token keyword">import</span> KoaRouter <span class="token keyword">from</span> <span class="token string">'koa-router'</span>
+<span class="token keyword">import</span> UserController <span class="token keyword">from</span> <span class="token string">'./../controllers/user.js'</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">KoaRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/user/:id'</span><span class="token punctuation">,</span> UserController<span class="token punctuation">.</span>getUserInfo<span class="token punctuation">)</span> <span class="token comment">//用POST请求</span>
+  app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">allowedMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>把路由挂载到<code>Koa</code>上，修改<code>app.js</code>文件：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// app.js</span>
+
+<span class="token keyword">import</span> Koa <span class="token keyword">from</span> <span class="token string">'koa'</span>
+<span class="token keyword">import</span> bodyParser <span class="token keyword">from</span> <span class="token string">'koa-bodyparser'</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./server/routes/router'</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">bodyParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token function">router</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server is running at http://localhost:3000'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> app
+</code></pre></div><p>最后，我们在数据库里随意加一条数据用来测试：</p> <div style="text-align: center"><img src="/assets/img/test.3d2b71ad.jpg"></div> <p>打开终端，输入 node index.js，如果终端打印出<code>server is running at http://localhost:3000</code>，说明我们的 API 可以进行测试了！</p> <h2 id="测试-api"><a href="#测试-api" aria-hidden="true" class="header-anchor">#</a> 测试 API</h2> <p>API 的测试工具这里选用<a href="https://www.getpostman.com/" target="_blank" rel="noopener noreferrer">postman<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，如果没有安装该软件的话自己去官网下载安装一下，打开软件开始测试,方法选<code>post</code>,地址<code>http://localhost:3000/user/1</code>,点击<code>send</code>测试,结果如下图：</p> <div class="imgWrapper" data-v-2c224345><img src="/assets/img/testApi.a23b6226.jpg" data-v-2c224345></div> <p>成功拿到数据库里的数据，说明我们的 API 没有问题。</p></div> <div class="page-edit"><!----> <!----></div> <!----> <div class="bsa-cpc-wrapper"><div class="bsa-cpc"></div></div> <div class="vcomment"><div id="vcomments"></div></div></div> <!----></div></div>
+    <script src="/assets/js/26.a5f44df2.js" defer></script><script src="/assets/js/app.f5c29c1f.js" defer></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c3446600de53c605ba4f6c792e47dff9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </body>
+</html>

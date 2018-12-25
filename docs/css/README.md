@@ -148,3 +148,5 @@ comments: true
 <img-wrapper>
 <img src="./images/same.jpg"/>
 </img-wrapper>
+
+在图片还没完全加载完的时候，可以利用`padding-top:100%`来进行图片占位。
