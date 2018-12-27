@@ -100,6 +100,10 @@ module.exports = {
               {
                 text: 'CSS',
                 link: '/css/'
+              },
+              {
+                text: 'ES6',
+                link: '/ES6/'
               }
             ]
           },
@@ -124,7 +128,8 @@ module.exports = {
           '/koa2/': koaSidebarConfig('koa2'),
           '/essay/': essaySidebarConfig('随笔'),
           '/JS/': jsSidebarConfig('JS学习笔记'),
-          '/css/': cssSidebarConfig('css')
+          '/css/': cssSidebarConfig('css'),
+          '/ES6/': esSidebarConfig('ES6')
         }
       }
     }
@@ -185,6 +190,16 @@ function cssSidebarConfig(title) {
       title,
       collapsable: false,
       children: ['', '堆叠上下文', '移动端', 'Flex', '常见布局', 'BFC']
+    }
+  ]
+}
+
+function esSidebarConfig(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: ['', '解构赋值']
     }
   ]
 }

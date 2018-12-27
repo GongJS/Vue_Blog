@@ -58,7 +58,25 @@ var d = JSON.parse(JSON.stringify(c))
 d.age.a = 30
 console.log(c.age.a) // 20
 console.log(d.age.a) // 30
-// 但是要注意JSON无法序列化function、undefined、symbol、循环引用，目前为止，JS无法做到完美的深拷贝
+// 但是要注意JSON无法序列化function、会忽略undefined、symbol、无法解决循环引用的对象（会报错)。目前为止，JS无法做到完美的深拷贝
+
+// 引用类型作为参数传给函数
+function test(person) {
+  person.age = 26
+  person = {
+    //指向一个新的对象
+    name: 'yyy',
+    age: 30
+  }
+  return person
+}
+const p1 = {
+  name: 'yck',
+  age: 25
+}
+const p2 = test(p1)
+console.log(p1) // {name: "yck", age: 26}
+console.log(p2) // {name: "yck", age: 30}
 ```
 
 ## typeof 运算符
@@ -80,10 +98,17 @@ console.log(d.age.a) // 30
 ## instanceof 运算符
 
 ```js
+var str = 'hello word'
+str instanceof String // false
+var str = new String('hello word')
+str instanceof String //true
+
 var a = [1, 2, 3]
 console.log(a instanceof Array) //true
+
 var b = { age: 20 }
 console.log(b instanceof Object) //true
+
 function Foo() {}
 var f = new Foo()
 console.log(f instanceof Foo) //true
@@ -145,7 +170,7 @@ JSON 只不过是一个 JS 对象而已
 
 ```js
 JSON.string({ a: 10, b: 20 }) //JSON转换成字符串
-JSOn.parse('{a:10,b:20}') //字符串转换成JSON
+JSON.parse('{a:10,b:20}') //字符串转换成JSON
 ```
 
 ## 何时用 === 何时用 ==
