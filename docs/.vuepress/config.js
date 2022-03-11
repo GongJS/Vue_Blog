@@ -104,16 +104,16 @@ module.exports = {
               {
                 text: 'ES6',
                 link: '/ES6/'
+              },
+              {
+                text: 'js-cli',
+                link: '/js-cli/'
               }
             ]
           },
           {
             text: 'Project',
             link: '/project/'
-          },
-          {
-            text: 'Resume',
-            link: '/resume/'
           },
           {
             text: 'Friends',
