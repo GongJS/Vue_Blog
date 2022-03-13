@@ -1,6 +1,6 @@
 # js-cli
 一个基于 `rush`、`pnpm`、`node` 、`typescript` 开发的高性能、易扩展脚手架。
-
+[github](https://github.com/GongJS/js-cli)
 ## 安装
 
 ```shell
