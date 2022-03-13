@@ -21,7 +21,7 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "cca6aa6676c6f3263212ff066b720176"
+    "revision": "056de719385cb62ecdf1892c08f2e83d"
   },
   {
     "url": "assets/css/0.styles.d11e3aca.css",
@@ -424,52 +424,52 @@ self.__precacheManifest = [
     "revision": "6721a3984452aadb560b7fa0e6743986"
   },
   {
-    "url": "assets/js/app.fb8babee.js",
-    "revision": "440091bf104b9f52477e6160453512c3"
+    "url": "assets/js/app.ad91c88b.js",
+    "revision": "de0563ce91f39e2f2d3bd1d9d5f2aa9b"
   },
   {
     "url": "css/常见布局.html",
-    "revision": "173893f58f2a9ecd869085e8d71f3423"
+    "revision": "814700c4ed7bfa9683eb8c8086826032"
   },
   {
     "url": "css/堆叠上下文.html",
-    "revision": "731938b5e66753f27f539d55fb26b9bc"
+    "revision": "e4207c47bbce8aeddbd4c2a97551f5c8"
   },
   {
     "url": "css/移动端.html",
-    "revision": "becec7be56a6074a462dcdf0f7ee6dac"
+    "revision": "40ae1470b7c7f92c6622913fb8e6465b"
   },
   {
     "url": "css/BFC.html",
-    "revision": "af542abecab61b98bc876953605f8370"
+    "revision": "16a4051ac7b63ad0aeb76c485f3e15a6"
   },
   {
     "url": "css/Flex.html",
-    "revision": "4a01f237134b7cc50311ba6bbc65547d"
+    "revision": "4f7c5ceec3996d19b342ad80f6fbba86"
   },
   {
     "url": "css/index.html",
-    "revision": "9e3547989fa934d31ff4a66707a35307"
+    "revision": "91f3289e1ce4f72e1abe6f8afac2cf7d"
   },
   {
     "url": "ES6/解构赋值.html",
-    "revision": "eabd879fdc2ea339d95c22186dc332e7"
+    "revision": "7268689651ac9782ffcc1845ef0ab8d5"
   },
   {
     "url": "ES6/index.html",
-    "revision": "b8b92a810460eb59b8a0675d1f7396a8"
+    "revision": "439cd9ea78f8f082eca5d34d72792ab6"
   },
   {
     "url": "essay/index.html",
-    "revision": "9725158f180b94898bfe2102bca46ce8"
+    "revision": "67f8dd7fc780e2142dcd7f3f195fc43d"
   },
   {
     "url": "essay/touzi-2017.html",
-    "revision": "4860bd8f8db543876b535d783d2d1c57"
+    "revision": "a26ebe7b65fe9c94d1a1a71009350da1"
   },
   {
     "url": "friends/index.html",
-    "revision": "ff499216dcf89d98f4c32f525b51fb64"
+    "revision": "7a45ec6635f8b77b8fe92bcddaa969a5"
   },
   {
     "url": "hero.png",
@@ -529,75 +529,75 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "2ec8bb611414662f8f14899ede7d3248"
+    "revision": "f824392111acdb1397dafa42079c9f0d"
   },
   {
     "url": "js-cli/index.html",
-    "revision": "ada81604640b06cf9ef1cdb5a0f6556a"
+    "revision": "16544ca585fc82010eb3376c909469d6"
   },
   {
     "url": "JS/array-obj.html",
-    "revision": "4f301bd8d8adac18343c1de7ac5499f1"
+    "revision": "328237f46621aae003c1a45f9d4ecb0b"
   },
   {
     "url": "JS/async.html",
-    "revision": "61a2b9e7f5d5b08c5321155d00865ab4"
+    "revision": "17c8eb3a6dfd8f087ef9c46a721abff1"
   },
   {
     "url": "JS/date.html",
-    "revision": "9046f450c6f77d21fd532b7a1c880c15"
+    "revision": "332cd1a972885610e23668c6735674bc"
   },
   {
     "url": "JS/index.html",
-    "revision": "9c820fca1dffae4df9ebcd13dddcd251"
+    "revision": "21e3e53339dc1708444877956fd51eba"
   },
   {
     "url": "JS/JS-web-API.html",
-    "revision": "87c231b2a596051c96fe1461a62040bc"
+    "revision": "835a5d6672cdfcf1f8a3c2a061eb0251"
   },
   {
     "url": "JS/prototype.html",
-    "revision": "1d90cbf9f7bb64c2813e88229d8c15eb"
+    "revision": "08364d566cf072ca81022f56487cb200"
   },
   {
     "url": "JS/scope.html",
-    "revision": "507f3097736955a709e034af846bbaa1"
+    "revision": "3456c43882d6a718154b7a49c55bf747"
   },
   {
     "url": "JS/variable.html",
-    "revision": "e43675666a3c4e71fb0a8add8bfe41dd"
+    "revision": "433b05dea12bb5c8c42504a779886359"
   },
   {
     "url": "koa2/搭建后端环境.html",
-    "revision": "1012ca24b39303a19035ec1422ed5ec8"
+    "revision": "4b750a168288576e2b62c2be7f7347a2"
   },
   {
     "url": "koa2/登录功能.html",
-    "revision": "91efed2c82acd84632a7071830236c17"
+    "revision": "df598d356acb5cb468ffb5d71bca005e"
   },
   {
     "url": "koa2/构建前端页面.html",
-    "revision": "6d7933951b0f2d63f9387bfa92e0ee8d"
+    "revision": "5e65135d5a1749e49e1143d15f683d63"
   },
   {
     "url": "koa2/启动koa服务.html",
-    "revision": "869680a4c53329275dccff7f4e414327"
+    "revision": "d9be246130cf3e776c3f1fa5d4d3f741"
   },
   {
     "url": "koa2/实现员工的增删改查.html",
-    "revision": "ecb2359c20d0eb7c4fd4210cdf369590"
+    "revision": "ba9ae62d2daa052e5b0f6c651c589e8f"
   },
   {
     "url": "koa2/项目部署.html",
-    "revision": "a20133eed193b89bccb2bcb87695ee36"
+    "revision": "02bdd52c5d6660ebe9e796d6a889b673"
   },
   {
     "url": "koa2/写在最后.html",
-    "revision": "4b0b890da16ef32ef567af5d525a283d"
+    "revision": "af83cf8680183bbf010cba6add26387a"
   },
   {
     "url": "koa2/index.html",
-    "revision": "30647163252a8843a38e551f52218667"
+    "revision": "0976477ee43035b3fecea4fa3b5a23e8"
   },
   {
     "url": "line-numbers-desktop.png",
@@ -613,15 +613,15 @@ self.__precacheManifest = [
   },
   {
     "url": "project/index.html",
-    "revision": "c2504ba072c7a2b2082b4dbd43b6f6b5"
+    "revision": "5431fe3e74d063c0cf02f6091b27397f"
   },
   {
     "url": "resume/index.html",
-    "revision": "9e6fb05ff218969adaecccc2fceba3bb"
+    "revision": "32a0f32bbb9d00fd116089ce763f16a9"
   },
   {
     "url": "vuepress/index.html",
-    "revision": "c54e8376dd541d7e948e58626e4af975"
+    "revision": "7afc80da5d37b892c63a0f714baaac3d"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

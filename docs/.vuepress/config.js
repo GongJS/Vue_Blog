@@ -106,8 +106,12 @@ module.exports = {
                 link: '/ES6/'
               },
               {
-                text: 'js-cli',
+                text: 'js-cli 脚手架',
                 link: '/js-cli/'
+              },
+              {
+                text: '物料平台',
+                link: '/material/'
               }
             ]
           },
@@ -129,7 +133,8 @@ module.exports = {
           '/essay/': essaySidebarConfig('随笔'),
           '/JS/': jsSidebarConfig('JS学习笔记'),
           '/css/': cssSidebarConfig('css'),
-          '/ES6/': esSidebarConfig('ES6')
+          '/ES6/': esSidebarConfig('ES6'),
+          '/js-cli/': jsCliSidebarConfig('js-cli')
         }
       }
     }
@@ -200,6 +205,20 @@ function esSidebarConfig(title) {
       title,
       collapsable: false,
       children: ['', '解构赋值']
+    }
+  ]
+}
+
+function jsCliSidebarConfig(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        '新增模板',
+        '开发与调试'
+      ]
     }
   ]
 }
