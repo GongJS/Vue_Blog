@@ -68,6 +68,14 @@ Demo 的书写位置位于 `example` 目录下。此目录下的内容会单独�
    <img src="./images/doc.png"/>
 </img-wrapper>
 
+## 物料封面图
+在根目录`cover-image`文件夹里放置名称为`coverImage.png`的图片，展示效果如下：
+
+<img-wrapper>
+   <img src="./images/coverImage.png"/>
+</img-wrapper>
+左边为用户上传的封面图，右边为物料平台默认的展示图。
+
 ## 构建
 运行 `yarn build` 进行打包构建，生成的产物有:
 
